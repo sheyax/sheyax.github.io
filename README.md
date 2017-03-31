@@ -1,1 +1,0 @@
-# sheyax.github.io
