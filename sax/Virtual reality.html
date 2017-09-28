@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>OKme</title>
+<meta name="description" content="OKme">
+<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/dist/aframe-master.js"></script>
+</head>
+<body>
+<a-scene>
+ <a-assets>
+    <img id="my-image" src="anciw.jpg">
+  </a-assets>
+ <!--<a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>-->
+    <!--  <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+<a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>-->
+<a-plane rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+<a-image  position="0 3 0" color="blue">
+	<a-animation  easing="ease-in" attribute="rotation"
+                   from="0 0 0" to="0 360 0" dur="10000" repeat=" indefinite"></a-animation>
+</a-image>
+<a-image  position="-2 3 0" color="red">
+<a-text value="Hello, World!"></a-text>
+	<a-animation  easing="ease-in" attribute="rotation"
+                   from="0 0 0" to="0 360 0" dur="10000" repeat=" indefinite"></a-animation>
+</a-image>
+
+<a-box position="0 0 0" rotation="0 45 0" width="1" height="2" scale="1 1 1" color="green"></a-box>
+<a-box position="3 0 -2" rotation="0 45 0" width="1" height="2" scale="1 1 1" color="pink"></a-box>
+<a-box position="-3 0 -2" rotation="0 45 0" width="1" height="2" scale="1 1 1" color="yellow"></a-box>
+<a-box position="3 0 0" rotation="0 45 0" width="1" height="2" scale="1 1 1" color="orange" src="#my-image"></a-box>
+
+<a-cylinder position="-4 2 -3" rotation="90 0 0 " width="1" height="1" scale="1 1 1" color="pink"></a-cylinder>
+
+<a-cylinder position="4 2 -3" rotation="90 45 0 " width="1" height="1" scale="1 1 1" color="pink"></a-cylinder>
+
+
+
+
+<a-sky color="blue"></a-sky>
+<a-entity postition="0 0 3.8">
+<a-camera  position= "0 0 3"></a-camera>
+</a-entity>
+</a-scene>
+</body>
+</html>
