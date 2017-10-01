@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>OKme</title>
+<meta name="description" content="OKme">
+ <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+ <script src="https://aframe.io/releases/dist/aframe-master.js"></script>
+  <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+</head>
+<body>
+<a-scene physics>
+<a-assets>
+ <img id="img1" src="asian.png">
+  <img id="img2" src="sax.png">
+   <img id="img3" src="oldie.png">
+   <img id="img4" src="short.png">
+   <img id="wall1" src="woodwall.jpg">
+   <img id="boss" src="boss.png">
+   <img id="boxx" src="box.jpg">
+   <audio id="sound" src="sound.mp3"></audio>
+
+</a-assets>
+<a-plane rotation="-90 0 0" src="#wall1" width="20" height="20" color="#7BC8A4" static-body></a-plane>
+<!--start spot-->
+<a-entity id="start">
+<a-box position="0 0.115 0" width="0.3" height=".3" material="color:#110d15;shader:flat;flatShading:true" geometry="height:0.24;width:0.8400000000000001"  static-body> </a-box>
+<a-box position="-3.236 0.5 0" src="#img1" width="1" height="1" depth="0.05" rotation="0 90 0" static-body="sphereRadius:NaN"> </a-box>
+<a-box position="1.5 0.5  2.513" src="#img2" width="1" height="1" depth="0.05" static-body="sphereRadius:NaN"> </a-box>
+<a-box position="3.219 0.5 0" src="#img3" width="1" height="1" rotation="0 90 0" depth="0.05" static-body="sphereRadius:NaN"> </a-box>
+<a-box position="0 0.5 2.513" src="#img4" width="1" height="1" depth="0.05" static-body="sphereRadius:NaN"> </a-box>
+<a-box position="0 1.205 -2.909" src="#boss" scale="1.201 1.22 1" geometry="height:2;width:1.5;depth:0.05"></a-box>
+</a-entity>
+
+
+
+<!-- musicbox-->
+<a-box position="-1.485 0.205 -2.855" scale="0.6599999999999999 0.42 0.55"  src="#boxx" material=""    sound="src: url(sound.mp3); on: click">
+	
+
+</a-box>
+<!-- Walls-->
+
+<a-box position="1.793 1.205 2.704" src="#wall1" depth="0.1" width="7" height="5" geometry="height:2.47;width:10.969999999999999" static-body="sphereRadius:NaN"></a-box>
+
+<a-box position="1.793 1.205 -3" src="#wall1" depth="0.1" width="7" height="5" geometry="width:10.969999999999999;height:2.47" static-body="sphereRadius:NaN"></a-box>
+<a-box position="-3.463 1.211 -0.129" src="#wall1" rotation="0 90 0" geometry="width:5.67;height:2.47;depth:0.1" static-body="sphereRadius:NaN"></a-box>
+<a-box position="3.469 1.211 -0.208" src="#wall1" rotation="0 90 0" geometry="width:5.87;height:2.47;depth:0.1" static-body="sphereRadius:NaN"></a-box>
+
+
+<!--Roof-->
+<a-box id="roof" position="1.647 2.436 0" color="black" rotation="90 0 0" geometry="width:11.5;height:6.36;depth:0.17000000000000004"></a-box>
+
+<!--Roof Lights-->
+
+<a-entity id="roof_lights" position="0 2.344 0" rotation="90 0 0" >
+	  <a-entity position="1.382 1.52 0" scale="0.27999999999999997 0.24999999999999997 1">
+          
+          <a-plane width="3" height="3" color="#586266" opacity="0.6" position="0 0 -0.01">
+          	
+          	 <a-light type="point" color="#94c6ff" distance="1" position="0 0 0.248">
+        <a-animation attribute="intensity" from="0" to="2" delay="750" dur="500" fill="both"></a-animation>
+      </a-light>
+          </a-plane>
+        </a-entity>
+</a-entity>
+<a-sky  color="gray" ></a-sky>
+<!--Light-->
+
+<a-light type="ambient" position="0 0 0"></a-light>
+<a-camera  position= "0 -1 0" rotation="0 0 0 ">
+	<a-cursor id="cursor">
+<a-animation begin="click" easing="ease-in" attribute="scale"
+     fill="backward" from="0.1 0.1 0.1" to="1 1 1" dur="150"> </a-animation>
+	  <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                   from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+    </a-cursor>
+</a-camera>
+
+
+</a-entity>
+</a-scene>
+</body>
+</html>
