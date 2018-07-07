@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+	<a-scene>
+		<a-assets>
+            <img id="skyTexture" src=assets/img/Sunset.png>
+            <audio id="wind" src="assets/audio/wind.mp3" preload="auto"></audio>
+
+		</a-assets>
+		<a-entity environment="  skyType: atmosphere; lighting: point; fog: 0.5; playArea: 1; ground: hills; groundYScale: 3; groundTexture: squares; dressing: trees; dressingAmount: 500; "></a-entity>
+        
+       <!-- <a-entity sound="src: #wind; autoplay: true" ></a-entity>-->
+
+		<a-sky src="#skyTexture"></a-sky>
+        
+        
+
+		<a-plane rotation="-90 0 0" width="30" height="30"></a-plane>
+		<a-light type="ambient" color="445451"></a-light>
+		<a-light type="point" intensity="3" position=" 2 4 4"></a-light>
+		<a-text value="Vratec VR world " color="black"
+        position="-0.9 0.2 -3" scale="1.5 1.5 1.5"></a-text>
+        
+        <a-sound src="assets/audio/wind.mp3" autoplay="true"
+    position="-3 1 -4" loop="true"></a-sound>
+
+        
+        <a-camera >
+        <a-cursor>
+            </a-cursor></a-camera>
+	</a-scene>
+	</body>
+	</html>
